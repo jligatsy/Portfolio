@@ -1,0 +1,58 @@
+.terminal-window {
+  width: 700px;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Hack", monospace;
+  color: #cfcfcf;
+  margin: 50px auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
+  padding-left: 10px;
+}
+
+.buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #28c940; }
+
+.terminal-body {
+  padding: 15px;
+  text-align: left;
+}
+
+.command {
+  color: #78c2ad;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.output {
+  color: #e5c07b;
+  margin-left: 20px;
+}
+
+.prompt {
+  color: #78c2ad;
+  font-weight: bold;
+}
+
+
