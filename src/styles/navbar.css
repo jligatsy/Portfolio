@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: white; /* Optional: Adds a background */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    background: #dbd0cb;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background: #d3b9b9;
+}

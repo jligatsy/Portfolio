@@ -1,0 +1,69 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-circle {
+  position: relative;
+  width: 80vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
+  border: 3px solid #333;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Description styling */
+.project-description-container {
+  position: absolute;
+  bottom: 10vh;
+  text-align: center;
+  max-width: 400px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.project-description-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.project-description-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Make active project look bigger */
+.project-item.active .project-thumbnail {
+  transform: scale(1.2);
+}
