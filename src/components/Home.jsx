@@ -31,7 +31,7 @@ function Home() {
         {name}
         <span className={`cursor ${isTyping ? "fast-blink" : "slow-blink"}`}>|</span>
       </h1>
-      <p className="description">A passionate designer & developer.</p>
+      <p className="bio">A passionate designer & developer.</p>
     </div>
   );
 }
