@@ -25,14 +25,21 @@ function Home() {
   }, []);
 
   return (
-    <div className="home">
+    <section className="home">
       <img src={profilePic} alt="Josephine Ligatsyah" className="profile-image" />
       <h1 className="name">
         {name}
         <span className={`cursor ${isTyping ? "fast-blink" : "slow-blink"}`}>|</span>
       </h1>
-      <p className="bio">A passionate designer & developer.</p>
-    </div>
+      <p className="bio">
+        Hello! 😊
+        <br></br>
+        I code, design, and optimize. 
+        <br></br>
+        Passionate about user experience and product strategy, but also on a mission to exercise more (still figuring out if badminton counts as cardio). 
+        Let’s make cool things happen!✨
+      </p>
+    </section>
   );
 }
 

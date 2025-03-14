@@ -1,9 +1,13 @@
-.about-container{
-  background: #FFF4E9;
-  padding-top:100px;
-  padding-bottom: 100px;
+.about-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  overflow: hidden;
 }
-
 
 .terminal-window {
     max-width: 90%;
@@ -96,4 +100,20 @@
       opacity: 0;
     }
   }
+
+
+.floating-logo {
+    position: absolute;
+    max-width:55px;
+    max-height: 55px;
+    width: 5%;
+    height: 5%; 
+    opacity: 0.8;
+    animation: float 3s infinite ease-in-out alternate;
+}
   
+  /* Floating animation */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+  }

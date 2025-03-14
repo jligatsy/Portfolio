@@ -10,6 +10,26 @@
   overflow: hidden;
 }
 
+/* 🔹 Section Title */
+.projects-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* 🔹 Subtitle (Explanation) */
+.projects-subtitle {
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.4;
+}
+
 .project-circle {
   position: relative;
   width: 80vw;
@@ -39,18 +59,33 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.project-item:hover .project-thumbnail {
+  transform: scale(1.05) rotate(3deg);
+  filter: brightness(1.1);
+}
+
+.project-item.active .project-thumbnail {
+  transform: scale(1.2);
+  border: 3px solid #FFF4E9; 
+  box-shadow: 0px 0px 15px rgba(230, 189, 189, 0.8);
+}
+
 /* Description styling */
 .project-description-container {
   position: absolute;
-  bottom: 10vh;
+  bottom:5vh;
   text-align: center;
-  max-width: 400px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.9);
+  align-items: center;
+  max-width: 450px;
+  max-height: 400px;
+  background: #ffffffe6;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 10px;  
+  color: black;
+  padding: 20px;
 }
 
+/* Project title */
 .project-description-title {
   font-size: 18px;
   font-weight: bold;
@@ -58,9 +93,36 @@
   color: #333;
 }
 
-.project-description-text {
+/* Bullet points styling */
+.project-description-list {
+  text-align: justify;
+  padding-right: 20px;
+  list-style-type: none;  
+}
+
+.project-description-list li {
   font-size: 14px;
-  color: #666;
+  color: #000000;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.project-desc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adds spacing between the tags */
+  row-gap: 15px; /* Adds a "dent" or break between tag rows */
+  margin-top: 10px;
+}
+
+.project-desc-tag {
+  background: #FFF4E9;
+  color: black;
+  padding: 8px 12px;
+  margin-right: 5px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* Make active project look bigger */

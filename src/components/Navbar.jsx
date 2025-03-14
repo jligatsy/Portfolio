@@ -12,8 +12,8 @@ function Navbar() {
       <a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>Contact</a>
       <a href="#resume" onClick={(e) => handleNavClick(e, "resume")}>Resume</a>
       <a href="#about" onClick={(e) => handleNavClick(e, "about")}>About</a>
-      <a href="#skills" onClick={(e) => handleNavClick(e, "skills")}>Skills</a>
       <a href="#projects" onClick={(e) => handleNavClick(e, "projects")}>Projects</a>
+      <a href="#experiences" onClick={(e) => handleNavClick(e, "experiences")}>Experiences</a>
     </nav>
   );
 }

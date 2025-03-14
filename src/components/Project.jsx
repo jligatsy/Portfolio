@@ -1,18 +1,68 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import "../styles/project.css";
-import tempTrends from "../assets/Temp-Trends.png";
-import tiktok from "../assets/tiktok logo.webp";
+import tempTrends from "../assets/temptrendlogo.png";
+import tiktok from "../assets/tiktoklogo.png";
 import softwareImage from "../assets/SOFTWARE.png";
 import logo from "../assets/j.png";
 import pva from "../assets/pva.png";
 
 const projects = [
-  { id: 1, title: "Rubber-Cal TikTok Shop", description: "Managed influencer campaigns & ads", image: tiktok },
-  { id: 2, title: "Website Content Retrieval", description: "Built an engine to retrieve & rank content", image: softwareImage },
-  { id: 3, title: "This Portfolio", description: "Designed & developed this interactive portfolio", image: logo },
-  { id: 4, title: "Real Estate PDF Parser", description: "Extracts structured data from real estate PDFs", image: pva },
-  { id: 5, title: "Digital Wardrobe Assistant", description: "Personalized outfit recommendations using AI", image: tempTrends },
+  { 
+    id: 1, 
+    title: "Rubber-Cal TikTok Shop", 
+    description: [
+      "Led and managed Rubber-Cal’s TikTok Shop, optimizing 280+ product listings for better visibility and sales.",
+      "Developed a unified fulfillment process, integrating the CRM-ERP system and consolidating data from Google Sheets and Excel, achieving 93% inventory accuracy and ensuring on-time deliveries.",
+      "Coordinated ad campaigns with the content team, leveraging affiliate and influencer marketing to boost engagement and product sales."
+    ], 
+    tags : ["Microsoft 365", "Canva", 'NetSuite', "CRM-ERP"],
+    image: tiktok 
+  },
+  { 
+    id: 2, 
+    title: "Website Content Retrieval", 
+    description: [
+      "Implemented an inverted index to process and retrieve data from 56,000+ web pages. achieving <300ms query response times.",
+      "Developed a Boolean retrieval system with tf-idf ranking, optimizing indexed and search performance.",
+      "Collaborated with a team of 4, using GitHub for version control and conducting iterative testing to refine the search accuracy."
+    ], 
+    tags : ["Python", "Beautiful Soup", "Github"],
+    image: softwareImage 
+  },
+  { 
+    id: 3, 
+    title: "This Portfolio", 
+    description: [
+      "Designed & developed an web-portfolio using React (JSX).",
+      "Implemented dynamic animations using GSAP.",
+      "Optimized for responsiveness and accessibility."
+    ], 
+    tags : ["Figma", "React JSX", "CSS"],
+    image: logo 
+  },
+  { 
+    id: 4, 
+    title: "Real Estate PDF Parser", 
+    description: [
+      "Developed an internal web application for automating PDF data extraction into JSON format.",
+      "Integrated company APIs and ChromaDB for optimized retrieval, with plans to implement a chatbot.",
+      "Designed and developed the front-end using Figma for UI/UX and React(JSX)."
+    ], 
+    tags : ["Figma", "React JS", "Python", "OCR", "Github"],
+    image: pva
+  },
+  { 
+    id: 5, 
+    title: "Digital Wardrobe Assistant", 
+    description: [
+      "Built a web app that provides real-time weather updates and personalized outfit recommendation.",
+      "Integrated a weather API to retrieve the weather data of cities around the world.",
+      "Collaborated with a team member, conducting test cases to ensure functionality and performance."
+    ], 
+    tags : ["Figma", "HTML", "CSS", "JS", "Github"],
+    image: tempTrends 
+  },
 ];
 
 function Project() {
@@ -48,6 +98,15 @@ function Project() {
 
   return (
     <section id="projects" className="projects-container">
+      <h1 className="projects-title">Projects I’ve Worked On</h1>
+      <p className="projects-subtitle">
+        Here are some of the projects I have designed, developed, or collaborated on.
+        <br></br>
+        Click on any project to reveal its details! 
+        <br></br>
+        p.s. The projects rotate dynamically.
+      </p>
+
       <div className="project-circle">
         {projects.map((project, index) => (
           <div
@@ -64,10 +123,36 @@ function Project() {
       {/* Display description for the active project in the center */}
       <div className="project-description-container">
         <h2 className="project-description-title">{projects[activeIndex].title}</h2>
-        <p className="project-description-text">{projects[activeIndex].description}</p>
+        <div className="project-description-list">
+          <ul>
+          {projects[activeIndex].description.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+          </ul>
+          <div className="project-desc-tags">
+            {projects[activeIndex].tags.map((tag, i) => <span key={i} className="project-desc-tag">{tag}</span>)}
+          </div>
+        </div>
       </div>
+
     </section>
   );
 }
 
 export default Project;
+
+
+
+ {/* <div className="job-details">
+                  <div className="job-description">
+                    <ul>
+                      {exp.description.map((desc, i) => <li key={i}>{desc}</li>)}
+                    </ul>
+                    <div className="job-tags">
+                      {exp.tags.map((tag, i) => <span key={i} className="job-tag">{tag}</span>)}
+                    </div>
+                  </div>
+                  <div className="job-logo-container">
+                    <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo" />
+                  </div>
+                </div>       */}

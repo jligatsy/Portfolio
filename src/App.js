@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
-import Skills from "./components/Skills"
+import Experiences from "./components/Experiences"
 import "./styles/global.css"; // Global styles
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Home />
       <About />
       <Project />
-      <Skills />
+      <Experiences />
       <Contact />
     </div>
   );
