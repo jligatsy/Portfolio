@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/experiences.css";
 import { FaChevronDown, FaChevronUp, FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-
 import rubberCalLogo from "../assets/rclogo.jpg";
 import codeNinjasLogo from "../assets/codeninjaslogo.png";
 import tanakayaLogo from "../assets/tanakayalogo.jpg";
@@ -108,7 +107,7 @@ const experiences = [
 ];
 
 function Experiences() {
-  const [activeJob, setActiveJob] = useState(1); // Default: open the first job
+  const [activeJob, setActiveJob] = useState(1); // by defaultt, open the first job
 
   const toggleJob = (id) => {
     setActiveJob(activeJob === id ? null : id);

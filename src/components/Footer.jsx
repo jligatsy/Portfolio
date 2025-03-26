@@ -4,7 +4,6 @@ import "../styles/footer.css";
 function Footer() {
   return (
     <div className="footer">
-      {/* SVG curve at the top of the footer */}
       <div className="footer-curve">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
           <path

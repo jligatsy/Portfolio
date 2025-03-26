@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        {/* Email Icon */}
+        {/* WILL HAVE TO CHECK AGAIN */}
         <a
           href="mailto:josephineligatsyah@gmail.com"
           target="_blank"
@@ -22,7 +22,6 @@ function Navbar() {
           <MailOutlineIcon fontSize="large" />
         </a>
 
-        {/* LinkedIn Icon */}
         <a
           href="http://linkedin.com/in/josephine-ligatsyah-71756a21b"
           target="_blank"

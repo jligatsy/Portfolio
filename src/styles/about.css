@@ -18,110 +18,109 @@
  
 
 .terminal-window {
-    max-width: 90%;
-    width: 700px;
-    background-color: #2d2d2d;
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: "Hack", monospace;
-    color: #cfcfcf;
-    margin: 50px auto;
-    padding-bottom: 15px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 700px;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Hack", monospace;
+  color: #cfcfcf;
+  margin: 50px auto;
+  padding-bottom: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
   
 .terminal-header {
-    display: flex;
-    align-items: center;
-    background: #444;
-    padding: 10px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+  justify-content: space-between;
 }
   
-  .buttons {
-    display: flex;
-    gap: 6px;
-    padding-left: 10px;
-  }
+.buttons {
+  display: flex;
+  gap: 6px;
+  padding-left: 10px;
+}
   
-  .buttons span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-  }
+.buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
   
-  .close { background: #ff5f56; }
-  .minimize { background: #ffbd2e; }
-  .maximize { background: #28c940; }
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #28c940; }
   
-  .terminal-body {
-    padding: 15px;
-    text-align: left;
-  }
+.terminal-body {
+  padding: 15px;
+  text-align: left;
+}
   
-  /* Command style */
-  .command {
-    color: #78c2ad;
-    font-weight: bold;
-    margin-bottom: 5px;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
-  
-  /* Output style */
-  .output {
-    color: #e5c07b;
-    margin-left: 20px;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
-  
-  /* Animation to make text appear gradually */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
-  .prompt {
-    color: #78c2ad;
-    font-weight: bold;
-    margin-top: 10px;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.5s ease-in-out forwards 4s;
-  }
+.command {
+  color: #78c2ad;
+  font-weight: bold;
+  margin-bottom: 5px;
+  opacity: 0; /* invisible at first */
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
   
-  /* 🔹 Blinking Cursor Effect */
-  .prompt::after {
-    content: "_";
-    display: inline-block;
-    margin-left: 5px;
-    animation: blink 1s infinite;
-  }
+
+.output {
+  color: #e5c07b;
+  margin-left: 20px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
   
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+.prompt {
+  color: #78c2ad;
+  font-weight: bold;
+  margin-top: 10px;
+  opacity: 0; 
+  animation: fadeIn 0.5s ease-in-out forwards 4s;
+}
+  
+.prompt::after {
+  content: "_";
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+  
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 
 
 .floating-logo {
-    position: absolute;
-    max-width:55px;
-    max-height: 50px;
-    width: 5%;
-    height: 5%; 
-    opacity: 0.8;
-    animation: float 3s infinite ease-in-out alternate;
+  position: absolute;
+  max-width:55px;
+  max-height: 50px;
+  width: 5%;
+  height: 5%; 
+  opacity: 0.8;
+  animation: float 3s infinite ease-in-out alternate;
 }
   
-  /* Floating animation */
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-10px); }
-  }
+
+@keyframes float {
+   0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}

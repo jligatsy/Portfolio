@@ -66,15 +66,15 @@ const projects = [
 ];
 
 function Project() {
-  const [activeIndex, setActiveIndex] = useState(2); // Start with the center project as active
+  const [activeIndex, setActiveIndex] = useState(2); // start with the center project as active
   const projectRefs = useRef([]);
 
   const positions = [
-    { x: "-30vw", y: "20vh", rotate: -15 }, // Bottom left
-    { x: "-15vw", y: "-5vh", rotate: -10 }, // Middle left
-    { x: "0vw", y: "-20vh", rotate: 0 },    // Center (should be active)
-    { x: "15vw", y: "-5vh", rotate: 10 },   // Middle right
-    { x: "30vw", y: "20vh", rotate: 15 },   // Bottom right
+    { x: "-30vw", y: "20vh", rotate: -15 }, //bottom left
+    { x: "-15vw", y: "-5vh", rotate: -10 }, //middle left
+    { x: "0vw", y: "-20vh", rotate: 0 },    //center (should be active)
+    { x: "15vw", y: "-5vh", rotate: 10 },   //middle right
+    { x: "30vw", y: "20vh", rotate: 15 },   //bottom right
   ];
 
   useEffect(() => {
@@ -119,8 +119,6 @@ function Project() {
           </div>
         ))}
       </div>
-
-      {/* Display description for the active project in the center */}
       <div className="project-description-container">
         <h2 className="project-description-title">{projects[activeIndex].title}</h2>
         <div className="project-description-list">
@@ -142,8 +140,8 @@ function Project() {
 export default Project;
 
 
-
- {/* <div className="job-details">
+/* 
+ <div className="job-details">
                   <div className="job-description">
                     <ul>
                       {exp.description.map((desc, i) => <li key={i}>{desc}</li>)}
@@ -155,4 +153,6 @@ export default Project;
                   <div className="job-logo-container">
                     <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo" />
                   </div>
-                </div>       */}
+                </div>       
+                
+*/

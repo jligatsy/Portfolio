@@ -29,7 +29,6 @@ function About() {
   const [isInView, setIsInView] = useState(false);
   const aboutRef = useRef(null);
 
-  // Intersection Observer to detect visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,21 +36,22 @@ function About() {
           setIsInView(true);
         }
       },
-      { threshold: 0.3 } // trigger when 30% is visible
+      { threshold: 0.3 }
     );
-
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
+  
+    const currentRef = aboutRef.current;
+  
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
     return () => {
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
-
-  // Trigger line animation only after in view
+  
   useEffect(() => {
     if (isInView && visibleLines < 6) {
       const timeout = setTimeout(() => {
@@ -64,7 +64,7 @@ function About() {
   return (
     <div id="about" className="about-container" ref={aboutRef}>
       <h2 className="about-title">A little bit about me..</h2>
-      {/* Floating Logos */}
+      {/* flying random logos - will have to revisit the structure */}
       {techStack.map((tech) => (
         <img 
           key={tech.id} 
@@ -75,7 +75,7 @@ function About() {
         />
       ))}
 
-      {/* Terminal Window */}
+      {/* terminal-like display */}
       <div className="terminal-window">
         <div className="terminal-header">
           <div className="buttons">
