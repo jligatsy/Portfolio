@@ -1,17 +1,114 @@
-
 .skills-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    background: #f4f4f4;
     padding-top: 10vh;
     position: relative;
 }
 
+/* Section Titles */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.education-timeline {
+    position: relative;
+    width: 70%;
+    padding: 30px 0;
+    margin-bottom: 80px; 
+}
+
+/* basically the vertical line */
+.education-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #ccc;
+    transform: translateX(-50%);
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.education-item.left {
+    flex-direction: row-reverse;
+}
+
+.education-item.right {
+    flex-direction: row;
+}
+
+.education-marker {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.education-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.education-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 40%;
+    text-align: left;
+    position: relative;
+}
+
+.education-item.left .education-content {
+    margin-right: auto;
+}
+
+.education-item.right .education-content {
+    margin-left: auto;
+}
+
+.education-content ul {
+    padding: 0;
+    list-style: none;
+}
+
+.education-content li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+
+/* WORK EXPERIENCE SECTION*/
+
 .work-experience-container {
     width: 70%;
+    margin-bottom: 150px;
 }
 
 .job-item {
@@ -46,41 +143,38 @@
 
 .job-details {
     display: flex;
-    justify-content: space-between; /* Aligns text on the left and image on the right */
-    align-items: center; /* Ensures content is vertically aligned */
+    justify-content: space-between;
+    align-items: center;
     background: white;
     color: black;
     padding: 20px;
     border-radius: 8px;
-    flex-wrap: wrap; /* Ensures responsiveness */
+    flex-wrap: wrap;
 }
 
 .job-description {
-    flex: 1; /* Takes up remaining space */
-    font-size: 18px; /* Bigger font for job descriptions */
+    flex: 1;
+    font-size: 18px;
     line-height: 1.6;
 }
 
-/* Company Logo */
 .job-logo-container {
-    flex-shrink: 0; /* Prevents image from shrinking */
-    margin-left: 20px; /* Space between text and image */
+    flex-shrink: 0;
+    margin-left: 20px;
 }
 
 .job-logo {
-    width: auto; /* Make the logo bigger */
+    width: auto;
     height: auto;
     border-radius: 8px;
     object-fit: contain;
 }
 
-
-/* Make job tags larger */
 .job-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adds spacing between the tags */
-    row-gap: 15px; /* Adds a "dent" or break between tag rows */
+    gap: 10px;
+    row-gap: 15px;
     margin-top: 10px;
 }
 
@@ -94,7 +188,6 @@
     font-weight: bold;
 }
 
-/* Dropdown button */
 .job-header {
     width: 100%;
     background: #ebddd7;
@@ -115,9 +208,22 @@
 }
 
 
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+    .descriptions {
+        width: 60vw;
+        margin-left: 30vw;
+    }
+ 
+    .description {
+        max-width: 650px;
+        min-width: 500px;
+    }
+}
 
 
-.toggle-container {
+/* unused toggle feature */
+/* .toggle-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,106 +273,4 @@
 
 .toggle-circle.right {
     left: 26px;
-}
-
-
-.education-timeline {
-    position: relative;
-    width: 70%;
-    padding: 30px 0;
-}
-
-/* Vertical Line */
-.education-timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #ccc;
-    transform: translateX(-50%);
-}
-
-/* Individual Timeline Item */
-.education-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-.education-item.left {
-    flex-direction: row-reverse;
-}
-
-.education-item.right {
-    flex-direction: row;
-}
-
-/* Circular Marker for Logo */
-.education-marker {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.education-logo {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}
-
-/* Education Content Box */
-.education-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    width: 40%;
-    text-align: left;
-    position: relative;
-}
-
-.education-item.left .education-content {
-    margin-right: auto;
-}
-
-.education-item.right .education-content {
-    margin-left: auto;
-}
-
-/* Bullet Points */
-.education-content ul {
-    padding: 0;
-    list-style: none;
-}
-
-.education-content li {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-    .descriptions {
-        width: 60vw;
-        margin-left: 30vw;
-    }
-
-    .description {
-        max-width: 650px;
-        min-width: 500px;
-    }
-}
+} */

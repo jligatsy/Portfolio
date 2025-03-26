@@ -13,7 +13,7 @@ const projects = [
     title: "Rubber-Cal TikTok Shop", 
     description: [
       "Led and managed Rubber-Cal’s TikTok Shop, optimizing 280+ product listings for better visibility and sales.",
-      "Developed a unified fulfillment process, integrating the CRM-ERP system and consolidating data from Google Sheets and Excel, achieving 93% inventory accuracy and ensuring on-time deliveries.",
+      "Developed a unified fulfillment process, integrating the CRM-ERP system and consolidating data using Microsoft 365, ensuring on-time deliveries.",
       "Coordinated ad campaigns with the content team, leveraging affiliate and influencer marketing to boost engagement and product sales."
     ], 
     tags : ["Microsoft 365", "Canva", 'NetSuite', "CRM-ERP"],
@@ -23,8 +23,8 @@ const projects = [
     id: 2, 
     title: "Website Content Retrieval", 
     description: [
-      "Implemented an inverted index to process and retrieve data from 56,000+ web pages. achieving <300ms query response times.",
-      "Developed a Boolean retrieval system with tf-idf ranking, optimizing indexed and search performance.",
+      "Implemented an inverted index to process and retrieve data from 56,000+ web pages, achieving <300ms query response times.",
+      "Developed a Boolean retrieval system with TF-IDF  ranking, optimizing indexed and search performance.",
       "Collaborated with a team of 4, using GitHub for version control and conducting iterative testing to refine the search accuracy."
     ], 
     tags : ["Python", "Beautiful Soup", "Github"],
@@ -34,8 +34,8 @@ const projects = [
     id: 3, 
     title: "This Portfolio", 
     description: [
-      "Designed & developed an web-portfolio using React (JSX).",
-      "Implemented dynamic animations using GSAP.",
+      "Designed & developed a web-portfolio using Figma and React (JSX).",
+      "Implemented dynamic animations using GSAP, used MUI libraries, and CSS for consistency in layout and styles",
       "Optimized for responsiveness and accessibility."
     ], 
     tags : ["Figma", "React JSX", "CSS"],

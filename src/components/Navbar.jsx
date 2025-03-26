@@ -1,5 +1,7 @@
 import React from "react";
-import "../styles/navbar.css"; // Import CSS
+import "../styles/navbar.css";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Navbar() {
   const handleNavClick = (e, id) => {
@@ -9,11 +11,34 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>Contact</a>
-      <a href="#resume" onClick={(e) => handleNavClick(e, "resume")}>Resume</a>
-      <a href="#about" onClick={(e) => handleNavClick(e, "about")}>About</a>
-      <a href="#projects" onClick={(e) => handleNavClick(e, "projects")}>Projects</a>
-      <a href="#experiences" onClick={(e) => handleNavClick(e, "experiences")}>Experiences</a>
+      <div className="navbar-left">
+        {/* Email Icon */}
+        <a
+          href="mailto:josephineligatsyah@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Hi Josephine, let's connect!"
+        >
+          <MailOutlineIcon fontSize="large" />
+        </a>
+
+        {/* LinkedIn Icon */}
+        <a
+          href="http://linkedin.com/in/josephine-ligatsyah-71756a21b"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Visit LinkedIn"
+        >
+          <LinkedInIcon fontSize="large" />
+        </a>
+      </div>
+
+      <div className="navbar-right">
+        <a href="#about" onClick={(e) => handleNavClick(e, "about")}>About</a>
+        <a href="#projects" onClick={(e) => handleNavClick(e, "projects")}>Projects</a>
+        <a href="#experiences" onClick={(e) => handleNavClick(e, "experiences")}>Experiences</a>
+        <a href="/RESUME OF JOSEPHINE LIGATSYAH.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
     </nav>
   );
 }

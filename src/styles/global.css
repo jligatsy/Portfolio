@@ -1,8 +1,27 @@
 body {
-    background-color: #dbd0cb;  /* Soft background */
+    background-color: #FFF4E9;  
 }
 
 html {
     scroll-behavior: smooth;
 }
+
+
+/* color options: #FFF4E9, #dbd0cb */ 
+
+.wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .wave-divider .flip {
+    transform: rotate(180deg);
+  }
   

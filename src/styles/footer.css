@@ -1,0 +1,29 @@
+.footer {
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding: 10px 40px 10px;
+  position: relative;
+  font-size: 20px;
+}
+
+.footer-curve {
+  position: absolute;
+  top: -100px; 
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.footer-curve svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-text {
+  position: relative;
+  z-index: 1;
+}

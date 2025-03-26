@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/about.css"; 
-import jsLogo from "../assets/jslogo.jpg"; // Add your logos
+import jsLogo from "../assets/jslogo.jpg"; 
 import reactLogo from "../assets/reactlogo.png";
 import pythonLogo from "../assets/pythonlogo.png";
 import figmaLogo from "../assets/figmalogo.png";
@@ -9,31 +9,61 @@ import clogo from "../assets/clogo.png";
 import githublogo from "../assets/githublogo.png"
 import m365logo from "../assets/m365logo.png"
 import googlesearch from "../assets/google search.webp"
+import javalogo from "../assets/java.jpg"
 
 const techStack = [
-  { id: 1, name: "JavaScript", logo: jsLogo, position: { top: "15%", left: "15%" } },
-  { id: 2, name: "React", logo: reactLogo, position: { top: "5%", right: "20%" }, },
+  { id: 1, name: "JavaScript", logo: jsLogo, position: { top: "15%", left: "10%" } },
+  { id: 2, name: "React", logo: reactLogo, position: { top: "10%", right: "20%" }, },
   { id: 3, name: "googlesearch", logo: googlesearch, position: { bottom: "10%", left: "25%" } },
   { id: 4, name: "Figma", logo: figmaLogo, position: { bottom: "5%", right: "10%" } },
-  { id: 5, name: "HTML", logo: htmlLogo, position: { bottom: "40%", left: "5%" } },
-  { id: 6, name: "C", logo: clogo, position: { top: "35%", right: "15%" } },
+  { id: 5, name: "HTML", logo: htmlLogo, position: { bottom: "35%", left: "5%" } },
+  { id: 6, name: "C", logo: clogo, position: { top: "45%", right: "15%" } },
   { id: 7, name: "github", logo: githublogo, position: { top: "25%", right: "3%" } },
   { id: 8, name: "m365", logo: m365logo, position: {bottom: "15%", right: "45%"}},
-  { id: 9, name: "Python", logo:pythonLogo, position: {top:"3%", right:"5"}}
+  { id: 9, name: "Python", logo:pythonLogo, position: {top:"3%", right:"5"}},
+  { id: 10, name: "java", logo:javalogo, position: {top:"30%", left:"15%"}}
 ];
 
 function About() {
   const [visibleLines, setVisibleLines] = useState(0);
-  const delay = 500; // Delay for typing effect
+  const [isInView, setIsInView] = useState(false);
+  const aboutRef = useRef(null);
 
+  // Intersection Observer to detect visibility
   useEffect(() => {
-    if (visibleLines < 5) { 
-      setTimeout(() => setVisibleLines(visibleLines + 1), delay);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.3 } // trigger when 30% is visible
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
     }
-  }, [visibleLines]);
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
+  // Trigger line animation only after in view
+  useEffect(() => {
+    if (isInView && visibleLines < 6) {
+      const timeout = setTimeout(() => {
+        setVisibleLines((prev) => prev + 1);
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView, visibleLines]);
 
   return (
-    <div className="about-container">
+    <div id="about" className="about-container" ref={aboutRef}>
+      <h2 className="about-title">A little bit about me..</h2>
       {/* Floating Logos */}
       {techStack.map((tech) => (
         <img 
@@ -56,7 +86,7 @@ function About() {
         </div>
         <div className="terminal-body">
           {visibleLines > 0 && <p className="command">&gt; location?</p>}
-          {visibleLines > 0 && <p className="output">"Irvine, CA"</p>}
+          {visibleLines > 0 && <p className="output">"Orange County, CA"</p>}
 
           {visibleLines > 1 && <p className="command">&gt; education?</p>}
           {visibleLines > 1 && <p className="output">"University of California, Irvine - Computer Science"</p>}
@@ -64,10 +94,13 @@ function About() {
           {visibleLines > 2 && <p className="command">&gt; interests?</p>}
           {visibleLines > 2 && <p className="output">["fashion", "travel", "food", "badminton", "running"]</p>}
 
-          {visibleLines > 3 && <p className="command">&gt; life motto?</p>}
-          {visibleLines > 3 && <p className="output">"If you believe it, you can achieve it"</p>}
+          {visibleLines > 3 && <p className="command">&gt; daily thoughts?</p>}
+          {visibleLines > 3 && <p className="output">"cool designs, debugging codes, picking outfits, and craving sushi- maybe simultaneously"</p>}
 
-          {visibleLines > 4 && <p className="prompt">&gt;</p>}
+          {visibleLines > 4 && <p className="command">&gt; life motto?</p>}
+          {visibleLines > 4 && <p className="output">"If you believe it, you can achieve it"</p>}
+
+          {visibleLines > 5 && <p className="prompt">&gt;</p>}
         </div>
       </div>
     </div>

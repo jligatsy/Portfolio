@@ -5,12 +5,11 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: inherit;
   position: relative;
   overflow: hidden;
 }
 
-/* 🔹 Section Title */
+
 .projects-title {
   font-size: 32px;
   font-weight: bold;
@@ -20,7 +19,7 @@
   text-transform: uppercase;
 }
 
-/* 🔹 Subtitle (Explanation) */
+
 .projects-subtitle {
   font-size: 18px;
   text-align: center;
@@ -70,7 +69,6 @@
   box-shadow: 0px 0px 15px rgba(230, 189, 189, 0.8);
 }
 
-/* Description styling */
 .project-description-container {
   position: absolute;
   bottom:5vh;
@@ -85,7 +83,6 @@
   padding: 20px;
 }
 
-/* Project title */
 .project-description-title {
   font-size: 18px;
   font-weight: bold;
@@ -93,7 +90,6 @@
   color: #333;
 }
 
-/* Bullet points styling */
 .project-description-list {
   text-align: justify;
   padding-right: 20px;
@@ -110,8 +106,8 @@
 .project-desc-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Adds spacing between the tags */
-  row-gap: 15px; /* Adds a "dent" or break between tag rows */
+  gap: 10px; 
+  row-gap: 15px;
   margin-top: 10px;
 }
 
@@ -125,7 +121,6 @@
   font-weight: bold;
 }
 
-/* Make active project look bigger */
 .project-item.active .project-thumbnail {
   transform: scale(1.2);
 }
