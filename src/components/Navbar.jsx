@@ -36,7 +36,7 @@ function Navbar() {
         <a href="#about" onClick={(e) => handleNavClick(e, "about")}>About</a>
         <a href="#projects" onClick={(e) => handleNavClick(e, "projects")}>Projects</a>
         <a href="#experiences" onClick={(e) => handleNavClick(e, "experiences")}>Experiences</a>
-        <a href="/Resume of Josephine E Ligatsyah" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="/Resume of Josephine E Ligatsyah.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       </div>
     </nav>
   );
