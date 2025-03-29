@@ -12,16 +12,16 @@ import googlesearch from "../assets/google search.webp"
 import javalogo from "../assets/java.jpg"
 
 const techStack = [
-  { id: 1, name: "JavaScript", logo: jsLogo, position: { top: "15%", left: "10%" } },
+  { id: 1, name: "JavaScript", logo: jsLogo, position: { top: "15%", left: "15%" } },
   { id: 2, name: "React", logo: reactLogo, position: { top: "10%", right: "20%" }, },
-  { id: 3, name: "googlesearch", logo: googlesearch, position: { bottom: "10%", left: "25%" } },
+  { id: 3, name: "Google Search Console", logo: googlesearch, position: { bottom: "10%", left: "25%" } },
   { id: 4, name: "Figma", logo: figmaLogo, position: { bottom: "5%", right: "10%" } },
-  { id: 5, name: "HTML", logo: htmlLogo, position: { bottom: "35%", left: "5%" } },
+  { id: 5, name: "HTML", logo: htmlLogo, position: { bottom: "25%", left: "5%" } },
   { id: 6, name: "C", logo: clogo, position: { top: "45%", right: "15%" } },
-  { id: 7, name: "github", logo: githublogo, position: { top: "25%", right: "3%" } },
-  { id: 8, name: "m365", logo: m365logo, position: {bottom: "15%", right: "45%"}},
+  { id: 7, name: "Git", logo: githublogo, position: { top: "25%", right: "3%" } },
+  { id: 8, name: "Microsoft 365", logo: m365logo, position: {bottom: "15%", right: "45%"}},
   { id: 9, name: "Python", logo:pythonLogo, position: {top:"3%", right:"5"}},
-  { id: 10, name: "java", logo:javalogo, position: {top:"30%", left:"15%"}}
+  { id: 10, name: "Java", logo:javalogo, position: {top:"30%", left:"5%"}}
 ];
 
 function About() {
@@ -103,6 +103,21 @@ function About() {
           {visibleLines > 5 && <p className="prompt">&gt;</p>}
         </div>
       </div>
+
+      <div className="tech-stack-static">
+        {techStack.map((tech) => (
+          <div key={tech.id} className="logo-tooltip-wrapper">
+            <img
+              src={tech.logo}
+              alt={tech.name}
+              className="tech-logo-static"
+            />
+            <span className="tooltip-text">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+
+
     </div>
   );
 }

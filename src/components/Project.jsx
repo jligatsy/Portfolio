@@ -16,7 +16,7 @@ const projects = [
       "Developed a unified fulfillment process, integrating the CRM-ERP system and consolidating data using Microsoft 365, ensuring on-time deliveries.",
       "Coordinated ad campaigns with the content team, leveraging affiliate and influencer marketing to boost engagement and product sales."
     ], 
-    tags : ["Microsoft 365", "Canva", 'NetSuite', "CRM-ERP"],
+    tags : ["CRM-ERP", "Microsoft 365", "Canva", 'NetSuite'],
     image: tiktok 
   },
   { 
@@ -34,22 +34,22 @@ const projects = [
     id: 3, 
     title: "This Portfolio", 
     description: [
-      "Designed & developed a web-portfolio using Figma and React (JSX).",
-      "Implemented dynamic animations using GSAP, used MUI libraries, and CSS for consistency in layout and styles",
-      "Optimized for responsiveness and accessibility."
+      "Designed and developed this interactive personal portfolio website using Figma, React JSX, and CSS, incorporating dynamic visual elements to enhance user engagement.",
+      "Implemented dynamic animations using GSAP, used MUI libraries, and CSS for consistency in layout and styles.",
+      "Deployed the portfolio through Vercel with a custom domain, configuring DNS records, ultimately ensuring responsive and consistent performance."
     ], 
-    tags : ["Figma", "React JSX", "CSS"],
+    tags : ["React JSX", "CSS", "Figma"],
     image: logo 
   },
   { 
     id: 4, 
     title: "Real Estate PDF Parser", 
     description: [
-      "Developed an internal web application for automating PDF data extraction into JSON format.",
-      "Integrated company APIs and ChromaDB for optimized retrieval, with plans to implement a chatbot.",
-      "Designed and developed the front-end using Figma for UI/UX and React(JSX)."
+      "Build an internal PDF parsing web application that automates data extraction to reduce manual intervention and accelerate document processing.",
+      "A system capable of processing multiple real estate documents simultaneously, converting them into JSON, through the use of APIs, Tesseract OCR, and ChromaDB.",
+      "Designed and developed the front-end with Figma for UI/UX and implementing it in React (JSX), receiving continuous feedback from cross-functional teams."
     ], 
-    tags : ["Figma", "React JS", "Python", "OCR", "Github"],
+    tags : ["Python", "ChromaDB", "Figma", "React JS", "OCR", "Github"],
     image: pva
   },
   { 
@@ -98,7 +98,7 @@ function Project() {
 
   return (
     <section id="projects" className="projects-container">
-      <h1 className="projects-title">Projects I’ve Worked On</h1>
+      <h1 className="projects-title">Projects</h1>
       <p className="projects-subtitle">
         Here are some of the projects I have designed, developed, or collaborated on.
         <br></br>
