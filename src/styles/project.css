@@ -123,3 +123,44 @@
 .project-item.active .project-thumbnail {
   transform: scale(1.2);
 }
+@media screen and (max-width: 750px) {
+  .project-circle {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    overflow: hidden; /* no scroll */
+    flex-wrap: nowrap;
+  }
+
+  .project-item {
+    position: static;
+    flex: 1 1 auto;
+    width: 17vw; /* 5 items x ~17vw = ~85vw total */
+    height: auto;
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 15%;
+    border: 2px solid #333;
+  }
+
+  .project-description-container {
+    position: static;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+  }
+}

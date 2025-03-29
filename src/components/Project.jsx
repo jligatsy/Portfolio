@@ -64,10 +64,12 @@ const projects = [
     image: tempTrends 
   },
 ];
-
 function Project() {
-  const [activeIndex, setActiveIndex] = useState(2); // start with the center project as active
+  const [activeIndex, setActiveIndex] = useState(2);
   const projectRefs = useRef([]);
+  const touchStartX = useRef(null);
+
+  const isMobile = () => window.innerWidth <= 750;
 
   const positions = [
     { x: "-30vw", y: "20vh", rotate: -15 }, //bottom left
@@ -78,6 +80,19 @@ function Project() {
   ];
 
   useEffect(() => {
+    const updateIsMobile = () => {
+      isMobile.current = window.innerWidth <= 750;
+    };
+
+    window.addEventListener("resize", updateIsMobile);
+    updateIsMobile(); // run initially
+
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile.current) return;
+    
     projectRefs.current.forEach((el, index) => {
       if (el) {
         const projIndex = (index - activeIndex + 2 + projects.length) % projects.length;
@@ -92,8 +107,29 @@ function Project() {
     });
   }, [activeIndex]);
 
-  const handleClick = () => {
-    setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  useEffect(() => {
+    if (isMobile.current && projectRefs.current[activeIndex]) {
+      projectRefs.current[activeIndex].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeIndex]);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    if (diff > 50) {
+      setActiveIndex((prev) => (prev + 1) % projects.length);
+    } else if (diff < -50) {
+      setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
+    }
   };
 
   return (
@@ -101,10 +137,10 @@ function Project() {
       <h1 className="projects-title">Projects</h1>
       <p className="projects-subtitle">
         Here are some of the projects I have designed, developed, or collaborated on.
-        <br></br>
-        Click on any project to reveal its details! 
-        <br></br>
-        p.s. The projects rotate dynamically.
+        <br />
+        Click on any project to reveal its details!
+        <br />
+        p.s. The projects rotate dynamically (*and better*) in desktop view.
       </p>
 
       <div className="project-circle">
@@ -113,32 +149,40 @@ function Project() {
             key={project.id}
             className={`project-item ${index === activeIndex ? "active" : ""}`}
             ref={(el) => (projectRefs.current[index] = el)}
-            onClick={handleClick}
+            onClick={() => {
+              if (isMobile()) {
+                setActiveIndex(index); // mobile: tap to select
+              } else {
+                setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length); // desktop: rotate
+              }
+            }}
           >
             <img src={project.image} alt={project.title} className="project-thumbnail" />
           </div>
         ))}
       </div>
+
+
       <div className="project-description-container">
         <h2 className="project-description-title">{projects[activeIndex].title}</h2>
         <div className="project-description-list">
           <ul>
-          {projects[activeIndex].description.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
+            {projects[activeIndex].description.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
           </ul>
           <div className="project-desc-tags">
-            {projects[activeIndex].tags.map((tag, i) => <span key={i} className="project-desc-tag">{tag}</span>)}
+            {projects[activeIndex].tags.map((tag, i) => (
+              <span key={i} className="project-desc-tag">{tag}</span>
+            ))}
           </div>
         </div>
       </div>
-
     </section>
   );
 }
 
 export default Project;
-
 
 /* 
  <div className="job-details">

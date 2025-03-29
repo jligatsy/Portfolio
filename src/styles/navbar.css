@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 20px;
   background: white;
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
   
 .navbar-left a,

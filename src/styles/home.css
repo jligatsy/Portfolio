@@ -69,3 +69,10 @@
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+@media screen and (max-width: 1250px) {
+  .profile-image {
+    width: 350px; 
+  }
+}
+
