@@ -70,9 +70,19 @@
   100% { opacity: 0; }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 768px) {
+  .bio {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
   .profile-image {
-    width: 350px; 
+    width: 200px;
   }
 }
 

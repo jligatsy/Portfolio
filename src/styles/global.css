@@ -9,3 +9,11 @@ html {
 
 /* color options: #FFF4E9, #dbd0cb */ 
 
+body {
+    padding-top: env(safe-area-inset-top);
+}
+
+* {
+    box-sizing: border-box;
+}
+  

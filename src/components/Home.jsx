@@ -25,7 +25,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="home">
+    <section id= "home" className="home">
       <img src={profilePic} alt="Josephine Ligatsyah" className="profile-image" />
       <h1 className="name">
         {name}
