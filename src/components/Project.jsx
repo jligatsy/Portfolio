@@ -134,15 +134,13 @@ function Project() {
 
   return (
     <section id="projects" className="projects-container">
-      <h1 className="projects-title">Projects</h1>
-      <p className="projects-subtitle">
-        Here are some of the projects I have designed, developed, or collaborated on.
-        <br />
-        Click on any project to reveal its details!
-        <br />
-        p.s. The projects rotate dynamically (*and better*) in desktop view.
-      </p>
-
+      <div className = "projects-header">
+        <h1 className="projects-title">Projects</h1>
+        <p className="projects-subtitle">
+          Click on any project to reveal its details!
+        </p>
+      </div>
+      
       <div className="project-circle">
         {projects.map((project, index) => (
           <div

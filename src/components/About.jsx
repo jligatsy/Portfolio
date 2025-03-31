@@ -14,12 +14,12 @@ import javalogo from "../assets/java.jpg"
 const techStack = [
   { id: 1, name: "JavaScript", logo: jsLogo, position: { top: "15%", left: "15%" } },
   { id: 2, name: "React", logo: reactLogo, position: { top: "10%", right: "20%" }, },
-  { id: 3, name: "Google Search Console", logo: googlesearch, position: { bottom: "10%", left: "25%" } },
-  { id: 4, name: "Figma", logo: figmaLogo, position: { bottom: "5%", right: "10%" } },
+  { id: 3, name: "Google Search Console", logo: googlesearch, position: { bottom: "8%", left: "25%" } },
+  { id: 4, name: "Figma", logo: figmaLogo, position: { bottom: "15%", right: "10%" } },
   { id: 5, name: "HTML", logo: htmlLogo, position: { bottom: "25%", left: "5%" } },
   { id: 6, name: "C", logo: clogo, position: { top: "45%", right: "15%" } },
   { id: 7, name: "Git", logo: githublogo, position: { top: "25%", right: "3%" } },
-  { id: 8, name: "Microsoft 365", logo: m365logo, position: {bottom: "15%", right: "45%"}},
+  { id: 8, name: "Microsoft 365", logo: m365logo, position: {bottom: "3%", right: "45%"}},
   { id: 9, name: "Python", logo:pythonLogo, position: {top:"3%", right:"5"}},
   { id: 10, name: "Java", logo:javalogo, position: {top:"30%", left:"5%"}}
 ];
