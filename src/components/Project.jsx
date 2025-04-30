@@ -1,179 +1,163 @@
-import React, { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { useRef, useState } from "react";
 import "../styles/project.css";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import pilly from "../assets/pillylogo.png";
 import tempTrends from "../assets/temptrendlogo.png";
-import tiktok from "../assets/tiktoklogo.png";
 import softwareImage from "../assets/SOFTWARE.png";
 import logo from "../assets/j.png";
 import pva from "../assets/pva.png";
 
 const projects = [
-  { 
-    id: 1, 
-    title: "Rubber-Cal TikTok Shop", 
+  {
+    id: 1,
+    title: "Pilly",
+    subtitle: "2nd place UCI 2025 Design-A-Thon",
     description: [
-      "Led and managed Rubber-Cal’s TikTok Shop, optimizing 280+ product listings for better visibility and sales.",
-      "Developed a unified fulfillment process, integrating the CRM-ERP system and consolidating data using Microsoft 365, ensuring on-time deliveries.",
-      "Coordinated ad campaigns with the content team, leveraging affiliate and influencer marketing to boost engagement and product sales."
-    ], 
-    tags : ["CRM-ERP", "Microsoft 365", "Canva", 'NetSuite'],
-    image: tiktok 
+      "Reimagining daily medication routines to be more accessible to everyone, especially for seniors and those with sensory impairments.",
+      "Pilly is a smart pill dispenser designed with inclusivity and simplicity in mind, ultimately making medication management intuitive for all.",
+      "Focusing on clarity, accessibility, and trust through the usage of voice interfaces and a mascot for empathetic UX.",
+    ],
+    tags: ["Figma", "Devpost"],
+    links: {
+      Figma: "https://www.figma.com/design/kANUYBo3sayVl97II2zMf6/PILLY?node-id=0-1&p=f&t=Q6MThMrWRsZPswCJ-0",
+      Devpost: "https://devpost.com/software/pilly-kbw8tm?ref_content=my-projects-tab&ref_feature=my_projects"
+    },
+    image: pilly,
   },
-  { 
-    id: 2, 
-    title: "Website Content Retrieval", 
+  {
+    id: 2,
+    title: "This Portfolio",
+    subtitle: "Showcase of Personal Projects and Experience",
+    description: [
+      "Designed and developed this interactive personal portfolio website using Figma, React JSX, and CSS to enhance user engagement.",
+      "Deployed the portfolio through Vercel with a custom domain, configuring DNS records, ultimately ensuring responsive and consistent performance.",
+    ],
+    tags: ["React JSX", "CSS", "Figma"],
+    links: {
+      "React JSX": "https://www.josephineligatsyah.com"
+    },
+    image: logo,
+  },
+  {
+    id: 3,
+    title: "Website Content Retrieval",
+    subtitle: "Computer Science (Information Retrieval) Project", 
     description: [
       "Implemented an inverted index to process and retrieve data from 56,000+ web pages, achieving <300ms query response times.",
-      "Developed a Boolean retrieval system with TF-IDF  ranking, optimizing indexed and search performance.",
-      "Collaborated with a team of 4, using GitHub for version control and conducting iterative testing to refine the search accuracy."
-    ], 
-    tags : ["Python", "Beautiful Soup", "Github"],
-    image: softwareImage 
+      "Developed a Boolean retrieval system with TF-IDF ranking, optimizing indexed and search performance.",
+      "Collaborated with a team of 4, using GitHub for version control and conducting iterative testing to refine the search accuracy.",
+    ],
+    tags: ["Github", "Python", "Beautiful Soup"],
+    links: {
+      Github: "https://github.com/jligatsy"
+    },
+    image: softwareImage,
   },
-  { 
-    id: 3, 
-    title: "This Portfolio", 
+  {
+    id: 4,
+    title: "Real Estate PDF Parser",
+    subtitle: "Software Engineer Intern (Capstone Project)",
     description: [
-      "Designed and developed this interactive personal portfolio website using Figma, React JSX, and CSS, incorporating dynamic visual elements to enhance user engagement.",
-      "Implemented dynamic animations using GSAP, used MUI libraries, and CSS for consistency in layout and styles.",
-      "Deployed the portfolio through Vercel with a custom domain, configuring DNS records, ultimately ensuring responsive and consistent performance."
-    ], 
-    tags : ["React JSX", "CSS", "Figma"],
-    image: logo 
-  },
-  { 
-    id: 4, 
-    title: "Real Estate PDF Parser", 
-    description: [
-      "Build an internal PDF parsing web application that automates data extraction to reduce manual intervention and accelerate document processing.",
+      "Build an internal PDF parsing web application that automates data extraction to accelerate document processing.",
       "A system capable of processing multiple real estate documents simultaneously, converting them into JSON, through the use of APIs, Tesseract OCR, and ChromaDB.",
-      "Designed and developed the front-end with Figma for UI/UX and implementing it in React (JSX), receiving continuous feedback from cross-functional teams."
-    ], 
-    tags : ["Python", "ChromaDB", "Figma", "React JS", "OCR", "Github"],
-    image: pva
+      "Designed the front-end with Figma for UI/UX and implementing it in React JSX, receiving continuous feedback from cross-functional teams.",
+    ],
+    tags: ["Github","Python", "Figma", "React"],
+    links: {
+      Github: "https://github.com/jligatsy"
+    },
+    image: pva,
   },
-  { 
-    id: 5, 
-    title: "Digital Wardrobe Assistant", 
+  {
+    id: 5,
+    title: "Digital Wardrobe Assistant",
+    subtitle: "Informatics (UI Software) Project",
     description: [
-      "Built a web app that provides real-time weather updates and personalized outfit recommendation.",
-      "Integrated a weather API to retrieve the weather data of cities around the world.",
-      "Collaborated with a team member, conducting test cases to ensure functionality and performance."
-    ], 
-    tags : ["Figma", "HTML", "CSS", "JS", "Github"],
-    image: tempTrends 
+      "Built a platform that provides real-time weather updates and personalized outfit recommendation.",
+      "Integrated a weather API to retrieve the weather data of cities around the world and suggest outfits accordingly.",
+      "Collaborated with a team member, conducting test cases to ensure functionality and performance.",
+    ],
+    tags: ["Github", "WeatherApi", "Figma", "HTML", "CSS", "JS"],
+    links: {
+      Github: "https://github.com/jligatsy"
+    },
+    image: tempTrends,
   },
 ];
+
 function Project() {
-  const [activeIndex, setActiveIndex] = useState(2);
-  const projectRefs = useRef([]);
-  const touchStartX = useRef(null);
+  const containerRef = useRef(null);
+  const [flippedCards, setFlippedCards] = useState([]);
 
-  const isMobile = () => window.innerWidth <= 750;
-
-  const positions = [
-    { x: "-30vw", y: "20vh", rotate: -15 }, //bottom left
-    { x: "-15vw", y: "-5vh", rotate: -10 }, //middle left
-    { x: "0vw", y: "-20vh", rotate: 0 },    //center (should be active)
-    { x: "15vw", y: "-5vh", rotate: 10 },   //middle right
-    { x: "30vw", y: "20vh", rotate: 15 },   //bottom right
-  ];
-
-  useEffect(() => {
-    const updateIsMobile = () => {
-      isMobile.current = window.innerWidth <= 750;
-    };
-
-    window.addEventListener("resize", updateIsMobile);
-    updateIsMobile(); // run initially
-
-    return () => window.removeEventListener("resize", updateIsMobile);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile.current) return;
-    
-    projectRefs.current.forEach((el, index) => {
-      if (el) {
-        const projIndex = (index - activeIndex + 2 + projects.length) % projects.length;
-        gsap.to(el, {
-          x: positions[projIndex].x,
-          y: positions[projIndex].y,
-          rotate: positions[projIndex].rotate,
-          duration: 0.8,
-          ease: "power2.inOut",
-        });
-      }
-    });
-  }, [activeIndex]);
-
-  useEffect(() => {
-    if (isMobile.current && projectRefs.current[activeIndex]) {
-      projectRefs.current[activeIndex].scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-    }
-  }, [activeIndex]);
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
+  const scroll = (direction) => {
+    const container = containerRef.current;
+    const scrollAmount = container.offsetWidth;
+    container.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
   };
 
-  const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+  const isExternal = (url) => {
+    return !url.includes("github.com");
+  };
 
-    if (diff > 50) {
-      setActiveIndex((prev) => (prev + 1) % projects.length);
-    } else if (diff < -50) {
-      setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-    }
+  const toggleCard = (index) => {
+    setFlippedCards((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
-    <section id="projects" className="projects-container">
-      <div className = "projects-header">
-        <h1 className="projects-title">Projects</h1>
-        <p className="projects-subtitle">
-          Click on any project to reveal its details!
-        </p>
-      </div>
-      
-      <div className="project-circle">
-        {projects.map((project, index) => (
-          <div
-            key={project.id}
-            className={`project-item ${index === activeIndex ? "active" : ""}`}
-            ref={(el) => (projectRefs.current[index] = el)}
-            onClick={() => {
-              if (isMobile()) {
-                setActiveIndex(index); // mobile: tap to select
-              } else {
-                setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length); // desktop: rotate
-              }
-            }}
-          >
-            <img src={project.image} alt={project.title} className="project-thumbnail" />
-          </div>
-        ))}
-      </div>
+    <section id="projects" className="projects-carousel-container">
+      <h2 className="carousel-title">Projects</h2>
+      <p className="carousel-subtitle">Click on each image to learn more!</p>
 
+      <div className="carousel-wrapper">
+        <div className="carousel-cards" ref={containerRef}>
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`project-card ${flippedCards.includes(index) ? "flipped" : ""}`}
+              onClick={() => !flippedCards.includes(index) && toggleCard(index)}
+            >
+              <div className="card-inner">
+                <div className="card-front">
+                  <img src={project.image} alt={project.title} className="project-image" />
+                </div>
+                <div className="card-back" onClick={(e) => e.stopPropagation()}>
+                  <button className="close-btn" onClick={() => toggleCard(index)}>×</button>
+                  <h3>{project.title}</h3>
+                  {project.subtitle && <h4 className="card-subtitle"><em>{project.subtitle}</em></h4>}
+                  <ul className="card-desc">
+                    {project.description.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                  <div className="card-tags">
+                    {project.tags.map((tag, i) => {
+                      const link = project.links?.[tag];
+                      return link ? (
+                        <a
+                          key={i}
+                          className="card-tag"
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {tag} {isExternal(link) && <FaExternalLinkAlt size={12} style={{ marginLeft: 6 }} />}
+                        </a>
+                      ) : (
+                        <span key={i} className="card-tag">{tag}</span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
-      <div className="project-description-container">
-        <h2 className="project-description-title">{projects[activeIndex].title}</h2>
-        <div className="project-description-list">
-          <ul>
-            {projects[activeIndex].description.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
-          </ul>
-          <div className="project-desc-tags">
-            {projects[activeIndex].tags.map((tag, i) => (
-              <span key={i} className="project-desc-tag">{tag}</span>
-            ))}
-          </div>
+        <div className="carousel-nav">
+          <button className="scroll-arrow left" onClick={() => scroll("left")}>&larr;</button>
+          <button className="scroll-arrow right" onClick={() => scroll("right")}>&rarr;</button>
         </div>
       </div>
     </section>
@@ -181,20 +165,3 @@ function Project() {
 }
 
 export default Project;
-
-/* 
- <div className="job-details">
-                  <div className="job-description">
-                    <ul>
-                      {exp.description.map((desc, i) => <li key={i}>{desc}</li>)}
-                    </ul>
-                    <div className="job-tags">
-                      {exp.tags.map((tag, i) => <span key={i} className="job-tag">{tag}</span>)}
-                    </div>
-                  </div>
-                  <div className="job-logo-container">
-                    <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo" />
-                  </div>
-                </div>       
-                
-*/
