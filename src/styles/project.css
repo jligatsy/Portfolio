@@ -1,170 +1,162 @@
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  position: static;
+.projects-carousel-container {
+  background: #FFF4E9;
+  text-align: center;
+  padding: 40px 0;
+  width: 100%;
 }
 
-.projects-header {
-  margin-bottom : 50px;
-  text-align: center;
-  position: static;
-}
-
-
-.projects-title {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
+.carousel-title {
+  font-size: 36px;
+  font-weight: 700;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-
-.projects-subtitle {
-  font-size: 15px;
-  text-align: center;
+.carousel-subtitle {
+  font-size: 16px;
   color: #666;
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-  line-height: 1.4;
+  margin-bottom: 40px;
 }
 
-.project-circle {
-  margin-top: 60px;
-  position: static;
-  width: 80vw;
-  height: 30vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.project-item {
-  position: absolute;
-  width: 160px;
-  height: 160px;
+.carousel-cards {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  padding: 0 60px 40px 60px; 
+  gap: 40px;
+}
+
+/* HIDE SCROLLBAR? */
+.carousel-cards::-webkit-scrollbar {
+  display: none;
+}
+.carousel-cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-card {
+  flex: 0 0 400px;
+  height: 460px;
+  perspective: 1200px;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; 
 }
 
-.project-thumbnail {
+.card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 25%;
-  border: 3px solid #333;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
 }
 
-.project-item:hover .project-thumbnail {
-  transform: scale(1.05) rotate(3deg);
-  filter: brightness(1.1);
+.project-card.flipped .card-inner {
+  transform: rotateY(180deg);
 }
 
-.project-item.active .project-thumbnail {
-  transform: scale(1.2);
-  border: 3px solid #FFF4E9; 
-  box-shadow: 0px 0px 15px rgba(230, 189, 189, 0.8);
-}
-
-.project-description-container {
-  /* position: absolute; */
-  text-align: center;
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  max-width: 450px;
-  max-height: 450px;
-  background: #ffffffe6;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;  
-  color: black;
-  padding: 20px;
+  overflow: hidden;
 }
 
-.project-description-title {
-  font-size: 18px;
+.card-front {
+  z-index: 2;
+}
+
+.project-image {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  text-align: left;
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.card-back h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.card-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-tag {
+  background: #f0e0d9;
+  padding: 6px 12px;
+  border-radius: 12px;
   font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-btn:hover {
   color: #333;
 }
 
-.project-description-list {
-  text-align: justify;
-  padding-right: 20px;
-  list-style-type: none;  
-}
-
-.project-description-list li {
-  font-size: 14px;
-  color: #000000;
-  margin-bottom: 5px;
-  line-height: 1.4;
-}
-
-.project-desc-tags {
+.carousel-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px; 
-  row-gap: 15px;
-  margin-top: 10px;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px; 
 }
 
-.project-desc-tag {
-  background: #FFF4E9;
-  color: black;
-  padding: 8px 12px;
-  margin-right: 5px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: bold;
+.scroll-arrow {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.project-item.active .project-thumbnail {
-  transform: scale(1.2);
-}
-@media screen and (max-width: 800px) {
-  .project-circle {
-    position: static;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    padding: 10px;
-    overflow: hidden; /* no scroll */
-    flex-wrap: nowrap;
-  }
-
-  .project-item {
-    position: static;
-    flex: 1 1 auto;
-    width: 17vw; /* 5 items x ~17vw = ~85vw total */
-    height: auto;
-    transform: none !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .project-thumbnail {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    border-radius: 15%;
-    border: 2px solid #333;
-  }
-
-  .project-description-container {
-    position: static;
-    margin-top: 20px;
-    width: 90%;
-    max-width: 500px;
-  }
+.scroll-arrow:hover {
+  transform: scale(1.1);
 }
