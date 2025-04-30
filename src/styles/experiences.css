@@ -129,7 +129,7 @@
 
 .job-year {
     font-weight: bold;
-    color: black;
+    color: #3a2f2f;
 }
 
 .job-logo {
@@ -147,7 +147,7 @@
     justify-content: space-between;
     align-items: center;
     background: white;
-    color: black;
+    color: #3a2f2f;
     padding: 20px;
     border-radius: 8px;
     flex-wrap: wrap;
@@ -180,8 +180,8 @@
 }
 
 .job-tag {
-    background: #FFF4E9;
-    color: black;
+    background: #ecd3fd;
+    color: #3a2f2f;
     padding: 8px 12px;
     margin-right: 5px;
     border-radius: 12px;
@@ -191,9 +191,9 @@
 
 .job-header {
     width: 100%;
-    background: #ebddd7;
+    background: #f4ebfa;
     font-weight: bold;
-    color: black;
+    color: #3a2f2f;
     padding: 18px 22px;
     border-radius: 8px;
     display: flex;
@@ -205,7 +205,7 @@
 }
 
 .job-header.active {
-    background: #FFF4E9;
+    background: #ecd3fd;
 }
 
 .break-desktop {

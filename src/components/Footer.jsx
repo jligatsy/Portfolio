@@ -8,7 +8,7 @@ function Footer() {
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
           <path
             d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"
-            fill="#d4e2ed"
+            fill="#ebecfa"
           />
         </svg>
       </div>

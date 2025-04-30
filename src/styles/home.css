@@ -6,8 +6,8 @@
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-  color: #666362;
-  background-color: #d4e2ed; 
+  color: #3a2f2f;
+  background: linear-gradient(#FFFFFF, #F0F4F8, #ebecfa); 
   padding-bottom: 40px;
   position: relative;
   clip-path: ellipse(150% 100% at 50% 100%);
@@ -20,11 +20,14 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background-color: #FFF4E9;
+  /* background: conic-gradient(from 0deg,#ebecfa); */
+  background: radial-gradient(ellipse,#ebecfa,#fef7ff,#eeeffb);
+  /* background: linear-gradient(to bottom right, #eff7fa, #f7effa,#f0eeffab);   */
   border-top-left-radius: 100% 100px;
   border-top-right-radius: 100% 100px;
   z-index: -1;
-}
+} 
+
 
 .profile-image {
   max-width:300px;

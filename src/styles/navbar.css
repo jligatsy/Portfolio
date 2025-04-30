@@ -9,7 +9,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid #f2e7da; 
+  border-bottom: 1px solid #f1faee; 
 
 }
   
@@ -32,12 +32,26 @@
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease-in-out;
+  position: relative; /* required for custom line effect */
 }
-  
 
+/* Remove text-decoration and apply custom "highlight" line on hover */
 .navbar-left a:hover,
 .navbar-right a:hover {
-  color: #d3b9b9;
+  color: #c0c1d3;
+}
+
+
+.navbar-right a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  width: 100%;
+  height: 7px; /* thickness of the line */
+  background-color: #dacae238; /* line color */
+  transform: translateY(50%);
+  pointer-events: none;
 }
 
 
