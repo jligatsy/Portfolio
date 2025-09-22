@@ -79,7 +79,7 @@ const experiences = [
     location: "Fountain Valley, California",
     employment: "Part-Time",
     website: "https://www.rubbercal.com",
-    year: "2024 - Present",
+    year: "2024 - 2025",
     logo: rubberCalLogo,
     description: [
       "Managed and analyzed ad performance for 750+ products across multiple storefronts and five company-owned websites, optimizing campaigns to drive an 11% increase in e-commerce sales.",
@@ -213,8 +213,8 @@ function Experiences() {
                 <div className="job-logo-container">
                   <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo"  
                   style={{
-                    width: "100px",
-                    height: "100px",
+                    width: "200px",
+                    height: "200px",
                     objectFit: "contain",
                     borderRadius: "6px"}} />
                 </div>
