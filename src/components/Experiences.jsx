@@ -8,6 +8,9 @@ import tanakayaLogo from "../assets/tanakayalogo.jpg";
 import kreasiLogo from "../assets/kmu.png";
 import uciLogo from "../assets/UCIlogo.png";
 import ivcLogo from "../assets/IVClogo.png";
+import pvalogo from "../assets/pvalogo.png";
+import yebologo from "../assets/yebologo.jpg";
+
 
 const education = [
   {
@@ -39,6 +42,38 @@ const education = [
 const experiences = [
   {
     id: 1,
+    title: "IT Specialist @ Yebo Group",
+    company: "Yebo Group",
+    location: "Tustin, California",
+    employment: "Full-Time",
+    website: "https://www.customboxesandpackaging.com",
+    year: "2025 - Present",
+    logo: yebologo,
+    description: [
+      "Act as the primary IT point of contact, managing Tier I/II service requests, troubleshooting hardware/software issues, ensuring system reliability, and maintaining network security by enforcing best IT practices and facilitating swift issue resolution.",
+      "Deploying and configuring company devices (laptops, desktops, mobile) using Microsoft Intune, Autopilot, and Entra ID while administering Microsoft 365, Active Directory, and enterprise SaaS platforms to ensure optimal performance and usability.",
+      "Ensuring network stability and security across LAN/WAN, VPN, and V oIP systems, troubleshoot connectivity issues with production machines, routers, and internet access, and utilize VMs for secure data storage, fostering seamless operations."
+    ],
+    tags: ["Tech Support", "System and Software Administrator", "Network Administration" , "IT Knowledgebase", "M365 Adminstration", "Filemaker"]
+  },
+  {
+    id: 2,
+    title: "Software Engineering Intern @ Partner Valuation Advisors",
+    company: "Partner Valuation Advisors",
+    location: "Irvine, California",
+    employment: "Capstone Project (Internship)",
+    website: "https://www.partnerval.com",
+    year: "2025",
+    logo: rubberCalLogo,
+    description: [
+      "Collaborated with a full-stack development team to build an internal PDF parsing web application, automating data extraction to reduce manual intervention and improve document processing speed, significantly enhancing operational efficiency.",
+      "Engineered the front-end framework using Figma, React (JSX) and JavaScript, then integrated it with backend services powered by Tesseract OCR, ChromaDB Vector Database, and APIs to streamline data-processing, enhance usability and scalability.",
+      "Drove software quality and team alignment by applying Agile and TDD principles, managing code with GitHub, tracking progress in Jira, while collaborating closely with the backend team and stakeholders through weekly sprint progress reports."
+    ],
+    tags: ["Project Management", "Python", "Figma", "React.js", "REST APIs", "ChromaDB", "Github", "Version Control", "Interdisciplinary Collab"]
+  },
+  {
+    id: 3,
     title: "Data Operations Analyst @ Rubber-Cal",
     company: "Rubber-Cal",
     location: "Fountain Valley, California",
@@ -55,7 +90,7 @@ const experiences = [
     tags: ["Ads Optimization", "Storefront Management", "Product Listing", "WooCommerce", "Google Analytics", "Google Search Console", "Excel", "NetSuite", "SCM-CRM-ERP"]
   },
   {
-    id: 2,
+    id: 4,
     title: "Coding and STEM Instructor @ Code Ninjas",
     company: "Code Ninjas",
     location: "Irvine, California",
@@ -71,7 +106,7 @@ const experiences = [
     tags: ["Microsoft MakeCode", "Unity (C#)", "Java", "Python", "Curriculum-Development", "Mentorship", "STEM Education", "Game-Based Learning"]
   },
   {
-    id: 3,
+    id: 5,
     title: "Food Service Associate @ Tanakaya",
     company: "Tanakaya Soba",
     location: "Tustin, California",
@@ -88,7 +123,7 @@ const experiences = [
     tags: ["Customer Service", "POS System Management", "Workflow Coordination", "Multi-tasking"]
   },
   {
-    id: 4,
+    id: 6,
     title: "Public Relations Intern @ PT. Kreasi Media Utama",
     company: "PT. Kreasi Media Utama",
     location: "Jakarta, Indonesia",
