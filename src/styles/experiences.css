@@ -304,8 +304,8 @@
     }
   
     .job-logo {
-        width: 50px;       
-        height: 50px;
+        width: 50px  !important;
+        height: 50px !important;
         border-radius: 6px;
         object-fit: contain;
     }
