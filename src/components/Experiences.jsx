@@ -211,7 +211,12 @@ function Experiences() {
                   </div>
                 </div>
                 <div className="job-logo-container">
-                  <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo" />
+                  <img src={exp.logo} alt={`${exp.company} logo`} className="job-logo"  
+                  style={{
+                    width: "100px",
+                    height: "100px",
+                    objectFit: "contain",
+                    borderRadius: "6px"}} />
                 </div>
               </div>
             )}
