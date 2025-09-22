@@ -64,7 +64,7 @@ const experiences = [
     employment: "Capstone Project (Internship)",
     website: "https://www.partnerval.com",
     year: "2025",
-    logo: rubberCalLogo,
+    logo: pvalogo,
     description: [
       "Collaborated with a full-stack development team to build an internal PDF parsing web application, automating data extraction to reduce manual intervention and improve document processing speed, significantly enhancing operational efficiency.",
       "Engineered the front-end framework using Figma, React (JSX) and JavaScript, then integrated it with backend services powered by Tesseract OCR, ChromaDB Vector Database, and APIs to streamline data-processing, enhance usability and scalability.",
