@@ -20,7 +20,7 @@ const techStack = [
   { id: 6, name: "C", logo: clogo, position: { top: "45%", right: "15%" } },
   { id: 7, name: "Git", logo: githublogo, position: { top: "25%", right: "3%" } },
   { id: 8, name: "Microsoft 365", logo: m365logo, position: {bottom: "3%", right: "45%"}},
-  { id: 9, name: "Python", logo:pythonLogo, position: {top:"3%", right:"5"}},
+  { id: 9, name: "Python", logo:pythonLogo, position: {top:"5%", right:"5"}},
   { id: 10, name: "Java", logo:javalogo, position: {top:"30%", left:"5%"}}
 ];
 
@@ -63,6 +63,13 @@ function About() {
 
   return (
     <div id="about" className="about-container" ref={aboutRef}>
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path
+          d="M0,100 C480,0 960,0 1440,100 L1440,0 L0,0 Z"
+          fill="#ebecfa"
+        />
+      </svg>
+
       <h2 className="about-title">A little bit about me..</h2>
       {/* flying random logos - will have to revisit the structure */}
       {techStack.map((tech) => (

@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 60vh;
   text-align: center;
   color: #3a2f2f;
   background: linear-gradient(#FFFFFF, #F0F4F8, #ebecfa); 
@@ -21,7 +21,7 @@
   width: 100%;
   height: 100px;
   /* background: conic-gradient(from 0deg,#ebecfa); */
-  background: radial-gradient(ellipse,#ebecfa,#fef7ff,#eeeffb);
+  /* background: radial-gradient(ellipse,#fef7ff,#ebecfa,#eeeffb); */
   /* background: linear-gradient(to bottom right, #eff7fa, #f7effa,#f0eeffab);   */
   border-top-left-radius: 100% 100px;
   border-top-right-radius: 100% 100px;
